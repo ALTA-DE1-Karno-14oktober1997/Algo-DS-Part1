@@ -1,5 +1,13 @@
 def max_sequence(arr):
-    return 0
+    total_maksimum = float('-inf')
+    total_sementara = 0
+    for i in arr:
+        total_sementara += i
+        if total_sementara > total_maksimum:
+            total_maksimum = total_sementara
+        if total_sementara < 0:
+            total_sementara = 0
+    return total_maksimum
 
 if __name__ == "__main__":
     print(max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))  # 6
